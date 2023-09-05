@@ -1,1 +1,19 @@
-
+pipeline {
+    agent any
+    environment {
+        PATH = "/opt/maven/bin:$PATH"
+    }
+    stages {
+        stage('SCM') {
+            steps {
+                git credentialsId: 'git-vvk', url: 'https://github.com/vivek-mj/Sample2021.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+        
+    }
+}
