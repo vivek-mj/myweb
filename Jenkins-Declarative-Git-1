@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('SCM') {
             steps {
-                git credentialsId: 'git-vvk', url: 'https://github.com/vivek-mj/Sample2021.git'
+                git credentialsId: 'git-vvk', url: 'https://github.com/vivek-mj/myweb.git'
             }
         }
         stage('Build') {
             steps {
-                sh "mvn -f myweb/pom.xml clean package"
+                sh "mvn clean package"
             }
         }
         
