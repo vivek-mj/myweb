@@ -1,5 +1,4 @@
 currentBuild.displayName = "online-shopping-#"+currentBuild.number
-currentBuild.durationString = currentBuild.duration
 
 pipeline {
     agent any
